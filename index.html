@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <form id="inputForm" onsubmit="return Results()">
+        <fieldset form = "inputForm">
+            <legend>Please enter your: </legend>
+            <div id="formInputs">
+                <label for="Name">Name: </label><br>
+                <input type="text" id="name" name = "Name" required onblur="checkName()"><br><br>
+
+                <label for="userName">Username: </label><br>
+                <input type="text" id="un" name="userName" required onblur="checkUsername()"><br><br>
+
+                <label for="Password">Password: </label><br>
+                <input type="password" id="password" name="Password" required onblur="checkPW()"><br>
+                <input type="checkbox" onclick="showPassword()">Show Password <br><br>
+
+                <label for="Email">Email: </label><br>
+                <input type="email" name="Email" id="Email" required onblur="checkEmail()"><br><br>
+
+                <label for="Address">Address: </label><br>
+                <input type="text" id="Address" name="Address" required onblur="checkAddress()"><br><br>
+
+                <label for="Gender">Gender: </label><br>
+                <select id="gender" name="Gender" required onblur="checkGender()">
+                    <option value="" hidden>Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Prefer not to mention">Prefer not to mention</option>
+                </select><br><br>
+
+                <label for="Interests">Interests: </label><br>
+                <textarea name="Interest" id="Interest" cols="30" rows="10" onblur="checkInterests()"></textarea><br><br>
+
+                <button id="submitBtn" type="submit">Submit</button>
+                <button id="resetBtn" type="reset" onclick="clearResults()">Reset</button>
+            </div>
+        </fieldset><br>
+
+        <fieldset id="results">
+            <legend>Results</legend>
+            <p id="displayInputs"></p>
+        </fieldset>
+  
+    </form>
+    <script>
+        function checkName() {
+            var Name = document.getElementById("name").value;
+            var input = document.getElementById("name");
+            if (Name.length === 0){
+                input.style.border = "1px solid  #d12424";
+            }
+            else{
+                input.style.border = "1px solid #24d138";
+            }
+        }
+
+        function checkUsername() {
+                var UN = document.getElementById("un").value;
+                var input = document.getElementById("un");
+                if (UN.length === 0){
+                    input.style.border = "1px solid #d12424";
+                }
+                else{
+                    input.style.border = "1px solid #24d138";
+                }
+        }
+
+        function checkPW() {
+                var Password = document.getElementById("password").value;
+                var input = document.getElementById("password");
+                if (Password.length === 0){
+                    input.style.border = "1px solid #d12424";
+                }
+                else{
+                    input.style.border = "1px solid #24d138";
+                }
+        }
+        function showPassword() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+        function checkEmail() {
+            var Email = document.getElementById("Email").value;
+            var input = document.getElementById("Email");
+            if (Email.length === 0){
+                input.style.border = "1px solid #d12424";
+            }
+            else{                    
+                input.style.border = "1px solid #24d138";
+            }
+        }
+
+        function checkAddress() {
+            var Address = document.getElementById("Address").value;
+            var input = document.getElementById("Address");
+            if (Address.length === 0){
+                input.style.border = "1px solid #d12424";                
+            }
+            else{                    
+                input.style.border = "1px solid #24d138";
+            }
+        }
+        function checkGender() {
+            var Gender = document.getElementById("gender").value;
+            var input = document.getElementById("gender");
+            if (Gender.length === 0){
+                input.style.border = "1px solid #d12424";                
+            }
+            else{                    
+                input.style.border = "1px solid #24d138";
+            }
+        }
+        function checkInterests() {
+            var Interests = document.getElementById("Interest").value;
+            var input = document.getElementById("Interest");
+            if (Interests.length === 0){
+                input.style.border = "1px solid #d12424";
+            }
+            else{                    
+                input.style.border = "1px solid #24d138";
+            }
+        }
+
+        function Results(){
+            var Name = document.getElementById("name").value;
+            var UN = document.getElementById("un").value;
+            var Password = document.getElementById("password").value;
+            var Email = document.getElementById("Email").value;
+            var Address = document.getElementById("Address").value;
+            var Gender = document.getElementById("gender").value;   
+            var Interests = document.getElementById("Interest").value;
+
+            var display = document.getElementById("displayInputs");
+            display.innerHTML = "Name: " + Name + "</br>Username: " + UN + "</br>Password: " + Password + "</br>Email: " + Email + "</br>Address: " + Address + "</br>Gender: " + Gender + "</br>Interests: " + Interests; 
+
+            return false;
+        }
+
+        function clearResults(){
+            var results = document.getElementById("displayInputs");
+            results.innerHTML = "";
+        }
+
+    </script>
+    <link rel="stylesheet" href="style.css">
+</body>
+</html>

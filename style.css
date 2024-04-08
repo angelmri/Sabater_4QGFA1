@@ -1,0 +1,63 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family: monospace;
+    font-size: x-large;
+}
+
+input{
+    font-family: monospace;
+}
+legend{
+    font-weight: bolder;
+}
+fieldset{
+    background-color: rgb(192, 207, 235);
+    border-radius: 1vw;
+}
+#formInputs {
+    padding: 20px;
+}
+
+#results {
+    padding: 20px;
+}
+
+#gender{
+    font-family: monospace;
+}
+#submitBtn{
+    margin-left: 15%;
+    background-color: rgb(113, 190, 166);
+    padding: 15px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    border-radius: 1vw;
+    cursor: pointer;
+    border: none;
+}
+
+#resetBtn{
+    background-color: rgb(148, 113, 190);
+    padding: 15px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    border-radius: 1vw;
+    cursor: pointer;
+    border: none;
+}
+
+#resetBtn:hover{
+    background-color: rgb(183, 161, 210);
+
+}
+#submitBtn:hover{
+    background-color: rgb(152, 189, 177);
+}
